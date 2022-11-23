@@ -16,41 +16,13 @@ function App() {
   const [value, setValue] = useState("random user");
 
   const handleValue = (e) => {
-   if (e.target.classList.contains("icon")) {
-    const newValue = e.target.dataset.label;
-    setTitle(newValue);
-    setValue(person[newValue])
-   }
+    if (e.target.classList.contains("icon")) {
+      const newValue = e.target.dataset.label;
+      setTitle(newValue);
+      setValue(person[newValue]);
+    }
   };
-  // const getPerson = () => {
-  //   fetch(url)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       const person = data.result[0];
-  //       const { email, phone } = person;
-  //       const { large: image } = person.picture;
-  //       const { password } = person.login;
-  //       const { first, last } = person.name;
-  //       const { age } = person.dob;
-  //       const { number, name } = person.location.street;
-  //       const newPerson = {
-  //         email,
-  //         phone,
-  //         image,
-  //         password,
-  //         age,
-  //         street: `${number}${name}`,
-  //         name: `${first}${last}`,
-  //       };
-  //       setPerson(newPerson);
-  //       setLoading(false);
-  //       setTitle("name");
-  //       setValue(newPerson.name);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
+
   const getPerson = async () => {
     setLoading(true);
     const response = await fetch(url);
@@ -141,6 +113,16 @@ function App() {
           </button>
         </div>
       </div>
+      <footer className="footer">
+        <a
+          href="https://raziwebdeveloper.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className=" footer-link"
+        >
+          Developed with ❤ by raziwebdeveloper.com
+        </a>
+      </footer>
     </main>
   );
 }
